@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #3f3e3e;
+    background: #090909ec;
     text-align: center;
     padding: 0;
     color: whitesmoke;
@@ -89,17 +89,50 @@ body {
         display: block;
     }
 }
-#home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; /* Ensures responsiveness */
-    gap: 3rem; /* Adds spacing between text and image */
+#about_you {
+    width: 70%;
+    margin: 0 auto;           
     font-size: 20px;
-    margin-top: 10rem;
+    text-align: center;       
+    padding: 20px 0;  
+    font-family: 'Playfair Display', serif;        
 }
+#home {
+    background-color: rgba(0, 0, 0, 0.651);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    height: 100vh;            
+    width: 100%;                         
+    text-align: center;
+    padding: 20px;
+    color:whitesmoke;
+}
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 2;
+}
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.home .content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+
 #name{
-    color: rgb(47, 184, 134);
+    color: rgb(47, 184, 134);   
     font-size: 40px;
     font-weight: 700;
 }
@@ -108,6 +141,7 @@ button {
     color: #333; /* Dark text for contrast */
     font-size: 20px;
     font-weight: bold;
+    text-decoration: none;
     padding: 12px 50px;
     border: none;
     border-radius: 8px;
@@ -137,15 +171,12 @@ h1{
     font-weight: 800;
     font-size: 40px;
 }
-.homedata {
-    padding:2rem ;
-    flex: 1; /* Takes up available space */
-    max-width: 600px; /* Restrict text width */
-    text-align: left; /* Align text to the left */
+#about_you{
+    width: 50%;
+    font-size: 20px;
 }
-
-.image {
-    flex: 1; /* Takes up available space */
+/* .image {
+    flex: 1; /* Takes up available space 
     display: flex;
     justify-content: center;
 }
@@ -156,8 +187,10 @@ h1{
     height: auto;
     width: 100%;
     object-fit: cover;
-    border-radius: 10px; /* Optional rounded corners */
-}
+    border-radius: 10px; /* Optional rounded corners
+    
+} 
+*/
 
 /* ✅ Make it responsive */
 @media (max-width: 768px) {
@@ -177,13 +210,12 @@ h1{
 .fullwidth-heading {
     /* Force full width relative to the viewport */
     width: 120vw;
-    margin-left: calc(50% - 50vw);  /* Center the 100vw container */
-    background-color: rgb(134, 125, 125);
+    margin-left: calc(40% - 50vw);  /* Center the 100vw container */
+    background-color: rgba(19, 18, 18, 0.467);
 }
 
 #project {
     font-size: 40px;
-    margin: 10rem 0 0 0; /* Remove left/right margin */
     padding: 10px 0;
     text-align: center;
     width: auto; /* ✅ Makes sure it spans the full width */
@@ -197,11 +229,11 @@ h1{
     justify-content: center; /* ✅ Centers images in a row */
     gap: 40px; /* ✅ Adds spacing between projects */
     margin: 40px auto;
-    width: auto /* ✅ Prevents excessive stretching */
+    width: auto ;
 }
 
 .proj {
-    background: rgb(93, 87, 87);
+    background: rgb(19, 18, 18);
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -215,6 +247,28 @@ h1{
     margin-left: 5rem;
     
 }
+.card {
+    background: rgb(93, 87, 87);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.proj, .cert {
+    width: calc(33.333% - 20px);
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5rem;
+}
+
+.proj:hover, .cert:hover {
+    transform: scale(1.09);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 /* ✅ Ensure images fit properly */
 .proj img {
@@ -266,11 +320,11 @@ h1{
 /* ✅ Projects Section */
 .certifications {
     display: flex;
-    flex-wrap: wrap;  /* ✅ Ensures images wrap when needed */
-    justify-content: center; /* ✅ Centers images in a row */
-    gap: 40px; /* ✅ Adds spacing between projects */
+    flex-wrap: wrap;  
+    justify-content: center; 
+    gap: 40px; 
     margin: 40px auto;
-    width: auto /* ✅ Prevents excessive stretching */
+    width: auto 
 }
 
 .cert {
@@ -280,7 +334,7 @@ h1{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    width: calc(33.333% - 20px); /* ✅ Each project takes 1/3 of the row */
+    width: calc(33.333% - 20px); 
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -289,7 +343,6 @@ h1{
     
 }
 
-/* ✅ Ensure images fit properly */
 .cert img {
     width: 100%;
     height: 200px;
@@ -415,4 +468,20 @@ h1{
         width: 90%;
         padding: 30px;
     }
+}
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #39c4e0;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+#topBtn:hover {
+    background: #299a9c;
 }
